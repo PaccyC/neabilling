@@ -1,14 +1,26 @@
-import Login from './pages/Login'
 import './index.css'
-
-
+import { BrowserRouter as Router ,Routes,Route } from 'react-router-dom'
+import MainLayout from './layout/MainLayout'
+import Dashboard from './pages/Dashboard'
+import Reports from './pages/Reports'
+import ManageUser from './pages/ManageUser'
+import GenerateBill from './pages/GenerateBill'
+import Profile from './pages/Profile'
 function App() {
 
   return (
-    <>
-     <Login/>
-     
-    </>
+    <Router>
+
+      <MainLayout>
+        <Routes>
+          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/reports' element={<Reports/>}/>
+          <Route path='/manage-user' element={<ManageUser/>}/>
+          <Route path='/generate-bill' element={<GenerateBill/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+        </Routes>
+      </MainLayout>
+    </Router>
   )
 }
 
