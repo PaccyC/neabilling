@@ -47,7 +47,9 @@ const Sidebar = () => {
         {/* Logout Button */}
 
         <div className=' p-4 border-t'>
-            <button className='w-full py-2 px-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700'>
+            <button className='w-full py-2 px-4  text-white rounded-lg hover:bg-purple-700 bg-gradient-to-r from-[#868CFF
+] to-[#4318FF
+] '>
                 Logout
             </button>
         </div>
