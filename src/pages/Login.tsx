@@ -1,53 +1,93 @@
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import image from '../assets/Image.png'; // Adjust the path as necessary
 
-import image from '../assets/Image.png'
+const branches = ["Branch 1", "Branch 2", "Branch 3"]; // Example list of branches
 
+const Login: React.FC = () => {
+  const [selectedBranch, setSelectedBranch] = useState<string>('');
 
-const braches=[
-    {
-        name:"Kigali",
-        "id":1
-    },
-    {
-        name:"Musanze",
-        "id":2
-    },
-    {
-        name:"Nyabihu",
-        "id":3
-    },
-    {
-        name:"Kayonza",
-        "id":4
-    }
-]
-const Login = () => {
-
-    const handleFormSubmission=()=>{
+  const handleFormSubmission = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     console.log("Logged in");
-    
-    }
-    return (
-        <div className="flex h-screen">
-             <div className="w-1/2 bg-white flex flex-col justify-center px-16">
-              <h2 className="text-3xl font-bold mb-4">Branch Login</h2>
-               <p className="mb-6 text-gray-600">Enter your email and password to log in!</p> 
-               <select className="mb-4 p-3 border border-gray-300 rounded-lg">
-                 <option value="">Select your Branch...</option>
-                 {braches.map((brach)=>(
-                    <option value={brach.name} key={brach.id}>{brach.name}</option>
-                 ))}
-                  {/* Add your branch options here */} </select>
-                   <input type="email" placeholder="Email" className="mb-4 p-3 border border-gray-300 rounded-lg" required />
-                    <input type="password" placeholder="Password" className="mb-4 p-3 border border-gray-300 rounded-lg" required /> 
-                    <div className="flex justify-between items-center mb-6"> 
-                        <label className="flex items-center text-gray-600">
-                             <input type="checkbox" className="mr-2" /> Keep me logged in </label> 
-                             <a href="/forgot-password" className="text-blue-500">Forget password?</a>
-                              </div>
-                               <button className="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-700">Login</button>
-                               </div> <div className="w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }} /> </div>
-    );
+    console.log("Selected branch:", selectedBranch);
   };
-  
-  export default Login;
-  
+
+  const handleBranchChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedBranch(e.target.value);
+  };
+
+  return (
+    <div className="grid grid-cols-2 h-[90vh] w-full">
+      {/* Left side - form */}
+      <div className="flex flex-col justify-center items-center p-8">
+        <h1 className="text-3xl font-semibold text-[#2B3674]">Branch Login</h1>
+        <p className="text-[#A3AED0] text-sm mb-4">Enter your email and password to log in!</p>
+        <form onSubmit={handleFormSubmission} className="w-full max-w-sm">
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="branch">
+              Select your Branch
+            </label>
+            <select
+              id="branch"
+              value={selectedBranch}
+              onChange={handleBranchChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option value="" disabled>Select your Branch...</option>
+              {branches.map((branch) => (
+                <option key={branch} value={branch}>{branch}</option>
+              ))}
+            </select>
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Password
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between mb-4">
+            <label className="flex items-center">
+              <input className="mr-2 leading-tight" type="checkbox" />
+              <span className="text-sm text-gray-700">Keep me logged in</span>
+            </label>
+            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+              Forgot password?
+            </a>
+          </div>
+          <div className="flex items-center justify-center">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-lg focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+      {/* Right side - image */}
+      <div className="flex items-center justify-center">
+        <img className="object-cover w-full h-full" src={image} alt="NEABILLING" />
+      </div>
+    </div>
+  );
+};
+
+export default Login;
