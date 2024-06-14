@@ -1,5 +1,12 @@
-import { FaCalendarAlt } from "react-icons/fa"
 import SearchBar from "../components/SearchBar"
+
+import { IoLocationSharp } from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import { IoEyeOff } from "react-icons/io5";
+import { FaEye } from "react-icons/fa";
+
+
 
 
 const ManageUser = () => {
@@ -38,7 +45,7 @@ const ManageUser = () => {
            <input 
               type="text"
               className=" p-2 w-full border border-blue-500 rounded" />
-              <FaCalendarAlt className=" absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+              <IoLocationSharp className=" absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
          </div>
        </div>
        <div className=" relative">
@@ -47,29 +54,36 @@ const ManageUser = () => {
            <input 
               type="number"
               className=" p-2 w-full border border-blue-500 rounded" />
-              <FaCalendarAlt className=" absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+              < FaPhoneAlt className=" absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
          </div>
        </div>
 
      </div>
     
-     <div>
+     <div className="relative">
        <label className="block text-[#2B3674]">Email</label>
+       <div className=" relative mt-1">
        <input 
          type="email"
          className=" mt-1 p-2 w-full border border-blue-500 rounded" />
+         < IoIosMail className=" absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+      </div>   
      </div>
-     <div>
+     <div className="relative">
        <label className="block text-[#2B3674]">Password</label>
+       <div className=" relative mt-1">
        <input 
          type="password"
          className=" mt-1 p-2 w-full border border-blue-500 rounded" />
+         < FaEye className=" absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"/>
+      </div>   
      </div>
+   
      <div className=" flex justify-end">
      <button
        type="submit"
-       className="px-4 py-2 bg-[#4318FF] text-white rounded hover:bg-blue-600 right-3">
-         Calculate
+       className="px-6 py-2 bg-[#4318FF] text-white rounded hover:bg-blue-600 right-3">
+         Add
        </button>
        
       </div>
