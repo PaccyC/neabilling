@@ -9,7 +9,7 @@ const MainLayout  = ({children}:Props) => {
   return (
    <div className="flex">
     <Sidebar/>
-    <div className="flex-grow p-6 bg-slate-300">
+    <div className="flex-grow p-6 bg-[#F4F7FE]">
         {children}
     </div>
    </div>
