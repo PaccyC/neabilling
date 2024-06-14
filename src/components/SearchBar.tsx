@@ -7,7 +7,7 @@ const SearchBar = () => {
   return (
     <div className="flex items-center bg-white shadow rounded-full p-2 w-full max-w-md mx-auto">
       <div className="relative flex-grow">
-        <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" />
         <input
           type="text"
           placeholder="Search"
@@ -18,7 +18,7 @@ const SearchBar = () => {
       <img
         src={image}
         alt="User profile image"
-        className="w-10 h-10 rounded-full"
+        className="w-10 h-10 rounded-full cursor-pointer"
       />
     </div>
   );
