@@ -7,6 +7,7 @@ import ManageUser from './pages/ManageUser'
 import GenerateBill from './pages/GenerateBill'
 import Profile from './pages/Profile'
 import Bill from './pages/Bill'
+import UsersDatailsPage from './pages/UsersDatails'
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/generate-bill' element={<GenerateBill/>}/>
           <Route path='/profile' element={<Profile/>}/>
           <Route path='/generate-bill/bill' element={<Bill/>}/>
+          <Route path='/users' element={<UsersDatailsPage/>}/>
         </Routes>
       </MainLayout>
     </Router>
