@@ -6,6 +6,7 @@ import Reports from './pages/Reports'
 import ManageUser from './pages/ManageUser'
 import GenerateBill from './pages/GenerateBill'
 import Profile from './pages/Profile'
+import Bill from './pages/Bill'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/manage-user' element={<ManageUser/>}/>
           <Route path='/generate-bill' element={<GenerateBill/>}/>
           <Route path='/profile' element={<Profile/>}/>
+          <Route path='/generate-bill/bill' element={<Bill/>}/>
         </Routes>
       </MainLayout>
     </Router>

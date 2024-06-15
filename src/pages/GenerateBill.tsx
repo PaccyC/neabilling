@@ -1,7 +1,12 @@
 import { FaCalendarAlt } from "react-icons/fa"
 import SearchBar from "../components/SearchBar"
 
+import { useNavigate } from "react-router-dom"
+
 const GenerateBill = () => {
+
+
+  const navigate= useNavigate();
   return (
     <div className="min-h-screen bg-[#F4F7FE] flex flex-col  w-full">
      <div className=" flex justify-between  mb-16">
@@ -60,7 +65,9 @@ const GenerateBill = () => {
       <div className=" flex justify-end">
       <button
         type="submit"
-        className="px-4 py-2 bg-[#4318FF] text-white rounded hover:bg-blue-600 right-3">
+        className="px-4 py-2 bg-[#4318FF] text-white rounded hover:bg-blue-600 right-3"
+        onClick={()=>navigate('/generate-bill/bill')}
+        >
           Calculate
         </button>
         
