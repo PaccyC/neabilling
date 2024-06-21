@@ -7,7 +7,7 @@ interface Props{
 
 const MainLayout  = ({children}:Props) => {
   return (
-   <div className="flex">
+   <div className="flex h-screen">
     <Sidebar/>
     <div className="flex-grow p-6 bg-[#F4F7FE]">
         {children}
