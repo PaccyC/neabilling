@@ -57,7 +57,7 @@ const UsersDatailsPage = () => {
                 </tr>
 
             </thead>
-           <tbody className=" bg-white divide-y divide-gray-200">
+           <tbody className=" bg-white divide-y divide-gray-200">z
             {users.map((user)=>(
                 <tr key={user.uid}>
                     <td className=" px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{user.uid}</td>
